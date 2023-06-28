@@ -1,0 +1,7 @@
+{
+    "/api/get": {
+      "target": "https://api.sportradar.com/tennis/trial/v3/en/rankings.json?api_key=dvh4rvwcbvhe3wxt2pj6puj3",
+      "secure": false,
+      "changeOrigin":true
+    }
+  }

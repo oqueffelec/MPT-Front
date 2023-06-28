@@ -1,0 +1,92 @@
+<p>Nouvelle équipe</p>
+
+<form #form="ngForm" (ngSubmit)="onSubmit(form)">
+    <input name="team.name" [(ngModel)]="team.name" placeholder="Nom de l'équipe">
+
+    <h4>Choix des joueurs</h4>
+    <mat-form-field>
+        <mat-label>Joueur du top 10</mat-label>
+        <mat-select name="team.playerTop10" [(ngModel)]="team.playerTop10">
+            <mat-option *ngFor="let player of playersTop10" [value]="player.competitor.name">
+            {{player.competitor.name}}
+            </mat-option>
+        </mat-select>
+
+    </mat-form-field>
+    <mat-form-field>
+
+        <mat-label>Joueur du top 20</mat-label>
+        <mat-select name="team.playerTop20" [(ngModel)]="team.playerTop20">
+            <mat-option *ngFor="let player of playersTop20" [value]="player.competitor.name">
+            {{player.competitor.name}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Joueur du top 30</mat-label>
+        <mat-select name="team.playerTop30" [(ngModel)]="team.playerTop30">
+            <mat-option *ngFor="let player of playersTop30" [value]="player.competitor.name">
+            {{player.competitor.name}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Joueur du top 40</mat-label>
+        <mat-select name="team.playerTop40" [(ngModel)]="team.playerTop40">
+            <mat-option *ngFor="let player of playersTop40" [value]="player.competitor.name">
+            {{player.competitor.name}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Joueur du top 50</mat-label>
+        <mat-select name="team.playerTop50" [(ngModel)]="team.playerTop50">
+            <mat-option *ngFor="let player of playersTop50" [value]="player.competitor.name">
+            {{player.competitor.name}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Joueur du top 60</mat-label>
+        <mat-select name="team.playerTop60" [(ngModel)]="team.playerTop60">
+            <mat-option *ngFor="let player of playersTop60" [value]="player.competitor.name">
+            {{player.competitor.name}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Joueur du top 70</mat-label>
+        <mat-select name="team.playerTop70" [(ngModel)]="team.playerTop70">
+            <mat-option *ngFor="let player of playersTop70" [value]="player.competitor.name">
+            {{player.competitor.name}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Joueur du top 80</mat-label>
+        <mat-select name="team.playerTop80" [(ngModel)]="team.playerTop80">
+            <mat-option *ngFor="let player of playersTop80" [value]="player.competitor.name">
+            {{player.competitor.name}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Joueur du top 90</mat-label>
+        <mat-select name="team.playerTop90" [(ngModel)]="team.playerTop90">
+            <mat-option *ngFor="let player of playersTop90" [value]="player.competitor.name">
+            {{player.competitor.name}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Joueur du top 100</mat-label>
+        <mat-select name="team.playerTop100" [(ngModel)]="team.playerTop100">
+            <mat-option *ngFor="let player of playersTop100" [value]="player.competitor.name">
+            {{player.competitor.name}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+    <button class="example-label" mat-raised-button color="primary">Ajouter l'équipe</button>
+  </form>
+
+  <app-team-ranks [players]="players" [events]="eventsSubject.asObservable()"></app-team-ranks>

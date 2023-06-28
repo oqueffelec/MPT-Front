@@ -1,0 +1,83 @@
+<h2>Equipes</h2>
+
+<table mat-table [dataSource]="teams" class="mat-elevation-z8">
+
+    <!--- Note that these columns can be defined in any order.
+        The actual rendered columns are set as a property on the row definition" -->
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef> Nom </th>
+    <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="score">
+    <th mat-header-cell *matHeaderCellDef> Score MPT </th>
+    <td mat-cell *matCellDef="let element"> {{element.score}} </td>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="playerTop10">
+    <th mat-header-cell *matHeaderCellDef> Joueur 1 </th>
+    <td mat-cell *matCellDef="let element" class="mpt-player-cell-{{element.playerTop10Category}}"> {{element.playerTop10}}</td>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="playerTop20">
+    <th mat-header-cell *matHeaderCellDef> Joueur 2 </th>
+    <td mat-cell *matCellDef="let element" class="mpt-player-cell-{{element.playerTop20Category}}"> {{element.playerTop20}} </td>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="playerTop30">
+        <th mat-header-cell *matHeaderCellDef> Joueur 3 </th>
+        <td mat-cell *matCellDef="let element" class="mpt-player-cell-{{element.playerTop30Category}}"> {{element.playerTop30}} </td>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="playerTop40">
+        <th mat-header-cell *matHeaderCellDef> Joueur 4 </th>
+        <td mat-cell *matCellDef="let element" class="mpt-player-cell-{{element.playerTop40Category}}"> {{element.playerTop40}} </td>
+    </ng-container>
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="playerTop50">
+        <th mat-header-cell *matHeaderCellDef> Joueur 5 </th>
+        <td mat-cell *matCellDef="let element" class="mpt-player-cell-{{element.playerTop50Category}}"> {{element.playerTop50}} </td>
+    </ng-container>
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="playerTop60">
+        <th mat-header-cell *matHeaderCellDef> Joueur 6 </th>
+        <td mat-cell *matCellDef="let element" class="mpt-player-cell-{{element.playerTop60Category}}"> {{element.playerTop60}} </td>
+    </ng-container>
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="playerTop70">
+        <th mat-header-cell *matHeaderCellDef> Joueur 7 </th>
+        <td mat-cell *matCellDef="let element" class="mpt-player-cell-{{element.playerTop70Category}}"> {{element.playerTop70}} </td>
+    </ng-container>
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="playerTop80">
+        <th mat-header-cell *matHeaderCellDef> Joueur 8 </th>
+        <td mat-cell *matCellDef="let element" class="mpt-player-cell-{{element.playerTop80Category}}"> {{element.playerTop80}} </td>
+    </ng-container>
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="playerTop90">
+        <th mat-header-cell *matHeaderCellDef> Joueur 9 </th>
+        <td mat-cell *matCellDef="let element" class="mpt-player-cell-{{element.playerTop90Category}}"> {{element.playerTop90}} </td>
+    </ng-container>
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="playerTop100">
+        <th mat-header-cell *matHeaderCellDef> Joueur 10 </th>
+        <td mat-cell *matCellDef="let element" class="mpt-player-cell-{{element.playerTop100Category}}"> {{element.playerTop100}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="supprimer équipe">
+        <th mat-header-cell *matHeaderCellDef> Supprimer équipe </th>
+        <td mat-cell *matCellDef="let element"> 
+            <button (click)="deleteTeam(element)">Supprimer</button>
+             </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
